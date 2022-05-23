@@ -1,0 +1,28 @@
+body {
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+}
+
+.grupo {
+    padding: 30px;
+    display: grid;
+    height: 800px;
+    grid-template-columns: 300px 200px 100px;
+    gap: 10px;
+    justify-content: center;
+    align-content: start;
+}
+
+.content {
+    padding: 15px;
+    border: 1px solid red;
+}
+
+a {
+    padding: 4px 15px;
+    border-radius: 4px;
+    background-color: aquamarine;
+}

@@ -1,0 +1,21 @@
+body {
+    background-color: black;
+}
+
+div {
+    /*background-color: rgb(204, 18, 18);*/
+    background-image: radial-gradient(rgb(235, 82, 82), rgb(143, 12, 12));
+    padding: 50px;
+    width: 400px;
+    height: 400px;
+    border-radius: 100%;
+    display: grid;
+    margin-inline: auto;
+    margin-top: 70px;
+    box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.575);
+}
+
+h1 {
+    align-self: center;
+    color: white;
+}
