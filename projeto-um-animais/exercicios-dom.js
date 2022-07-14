@@ -110,3 +110,80 @@ const linkExterno = document.querySelector('[href^="http://"]');
 console.log(linkExterno);
 
 linkExterno.setAttribute('href', 'http://google.com');
+
+// exercícios de dimensões e distâncias
+
+/*
+const listaAnimais = document.querySelector('.animais-lista');
+console.log(listaAnimais.clientHeight);
+
+const height = listaAnimais.scrollHeight;
+console.log(height);
+ 
+const copy = document.querySelector('.copy');
+
+const copyDistanciaEsquerda = copy.offsetLeft;
+console.log(copyDistanciaEsquerda);
+
+const contato = document.querySelector('.dados');
+
+const rect = listaAnimais.getBoundingClientRect();
+console.log(rect);
+
+console.log(window.innerWidth);
+
+*/
+
+// exercícios distâncias e dimensões
+
+// verifique a distância da primeira imagem em relação ao topo da página
+
+const imagem1 = document.querySelector('img');
+const imgDistanciaTopo = imagem1.offsetTop;
+console.log(imgDistanciaTopo);
+
+// retorne a soma da largura de todas as imagens
+function somaImagens() {
+  const imgs = document.querySelectorAll('img');
+  let soma = 0;
+  imgs.forEach((img) => {
+    // foi onde eu cheguei - console.log(img.offsetWidth);
+    soma = soma + img.offsetWidth;
+    // se soma é 0 primeiro, sempre que for pra uma nova imagem ele vai pegar a largura do próximo pra somar, somando todas.
+    // soma += img.offsetWidth é a mesma coisa.
+  });
+  console.log(soma);
+}
+
+window.onload = function () {
+  somaImagens();
+};
+
+// como as imagens não carregam antes de iniciar o JS, precisamos definir que essa função só aconteça após todas as imagens terem carregado, por isso colocamos dentro da função onload.
+
+// verifique se os links da página possuem o mínimo recomendado para telas utilizadas com o dedo (48px/48px de acordo com o google).
+
+const linksPagina = document.querySelectorAll('a');
+
+linksPagina.forEach((link) => {
+  const larguraLinks = linksPagina.offsetWidth;
+  const alturaLinks = linksPagina.offsetHeight;
+
+  if (larguraLinks >= 48 && alturaLinks >= 48) {
+    console.log(link, 'possui valor mínimo recomendado');
+  } else {
+    console.log(link, 'não possui o valor mínimo recomendado');
+  }
+});
+
+// a base tava certa, mas eu errei os offsetHeight/width e não coloquei o forEach.
+
+// se o browser for menor que 720px, adicione a classe menu-mobile ao menu
+
+const menu = document.querySelector('.menu');
+
+const tamanhoBrowser = window.matchMedia('(max-width: 720px)').matches;
+
+if (tamanhoBrowser) {
+  menu.classList.add('menu-mobile');
+}
