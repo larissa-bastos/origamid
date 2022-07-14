@@ -59,3 +59,54 @@ imgs.forEach(() => {
 });
 
 imgs.forEach(() => i++);
+
+// exercícios de atributos e classes
+
+/*const menu = document.querySelector('.menu');
+
+menu.classList.add('teste', 'teste2');
+
+menu.classList.remove('teste2');
+menu.classList.toggle('teste');
+console.log(menu.classList);
+
+const img = document.querySelector('img');
+
+console.log(img.getAttribute('alt'));
+
+img.setAttribute('alt', 'Uma raposa olhando para o céu');
+
+const altImg = img.getAttribute('alt');
+
+console.log(altImg);
+*/
+
+//exercício 1 - adicione a classe ativo a todos os itens do menu
+
+const itensMenu = document.querySelectorAll('.menu a');
+
+itensMenu.forEach(function (item) {
+  item.classList.add('ativo');
+  console.log(item);
+});
+
+//exercício 2 - remova a classe ativo de todos os itens do menu e mantenha apenas no primeiro
+
+itensMenu.forEach(function (item) {
+  item.classList.remove('ativo');
+});
+
+itensMenu[0].classList.toggle('ativo');
+
+// verifique se as imagens possuem o atributo alt
+
+const imgs = document.querySelectorAll('img');
+
+imgs.forEach((img) => console.log(img.hasAttribute('alt')));
+
+// modifique o href do link externo no menu.
+
+const linkExterno = document.querySelector('[href^="http://"]');
+console.log(linkExterno);
+
+linkExterno.setAttribute('href', 'http://google.com');
